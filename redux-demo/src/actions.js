@@ -14,10 +14,10 @@ function createComment(text) {
     }
 }
 
-function editComment(text, id) {
+function editComment(text, commentId) {
     return {
         type: EDIT_COMMENT,
-        id,
+        id: commentId,
         text
     }
 }
@@ -29,17 +29,17 @@ function removeComment(text, id) {
     }
 }
 
-function thumbUpComment(text, id) {
+function thumbUpComment(commentId) {
     return {
         type: THUMB_UP_COMMENT,
-        id
+        id : commentId
     }
 }
 
-function thumbDownComment(text, id) {
+function thumbDownComment(commentId) {
     return {
         type: THUMB_DOWN_COMMENT,
-        id
+        id: commentId
     }
 }
 
