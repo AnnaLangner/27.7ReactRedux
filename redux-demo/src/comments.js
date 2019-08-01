@@ -12,34 +12,31 @@ function comments (state = [], action) {
                 , ...state];
 
         case EDIT_COMMENT:
-            const presentState = Object.parse(Object.stringify(state));
-            const alteredState = presentState.forEach(item => {
-                if(item.id === action.id) return { ...item, text: action.text };
-                else item;
+            return state.map(comment => {
+                if(comment.id === action.id) {
+                    return { ...comment, text: action.text };
+                }
+            return comment;
             });
-
-            return alteredState;
 
         case REMOVE_COMMENT:
             return state.comments.filter(comment => comment.id !== action.id);
 
         case THUMB_UP_COMMENT:
-            const presentState = Object.parse(Object.stringify(state));
-            const alteredState = presentState.forEach(item => {
-                if(item.id === action.id) return { ...item, votes: item.votes + 1 };
-                else item;
+            return state.map(comment => {
+                if(comment.id === action.id) {
+                    return { ...comment, votes: comment.votes + 1 };
+                }
+            return comment;
             });
-
-            return alteredState;
 
         case THUMB_DOWN_COMMENT:
-            const presentState = Object.parse(Object.stringify(state));
-            const alteredState = presentState.forEach(item => {
-                if(item.id === action.id) return { ...item, votes: item.votes - 1 };
-                else item;
+            return state.map(comment => {
+                if(comment.id === action.id) {
+                    return { ...comment, votes: comment.votes - 1 };
+                }
+            return comment;
             });
-
-            return alteredState;
 
         default:
             return state;
