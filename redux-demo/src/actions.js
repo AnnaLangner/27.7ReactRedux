@@ -1,10 +1,10 @@
 import uuid from 'uuid';
 
-export const CREATE_COMMENT = 'app/comments/CREATE_COMMENT';
-export const EDIT_COMMENT = 'app/comments/EDIT_COMENT';
-export const REMOVE_COMMENT = 'app/comments/REMOVE_COMMENT';
-export const THUMB_UP_COMMENT = 'app/comments/THUMB_UP_COMMENT';
-export const THUMB_DOWN_COMMENT = 'app/comments/THUMB_DOWN_COMMENT';
+export const CREATE_COMMENT = 'CREATE_COMMENT';
+export const EDIT_COMMENT = 'EDIT_COMENT';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
+export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 
 function createComment(text) {
     return {
@@ -38,13 +38,15 @@ function thumbUpComment(commentId) {
 
 function thumbDownComment(commentId) {
     return {
+
         type: THUMB_DOWN_COMMENT,
         id: commentId
+
     }
 }
 
-export default createComment;
-export default editComment;
-export default removeComment;
-export default thumbUpComment;
-export default thumbDownComment;
+export const createComment1 = createComment;
+export const editComment1 = editComment;
+export const removeComment1 = removeComment;
+export const thumbUpComment1 = thumbUpComment;
+export const thumbDownComment1 = thumbDownComment;
