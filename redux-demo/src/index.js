@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducer';
-import {createComment1, editComment1, removeComment1, thumbDownComment1, thumbUpComment1} from './actions';
+import createComment from './actions';
 
 const store = createStore(reducer);
 
@@ -17,7 +17,7 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-store.dispatch(createComment1('pierwszy komentarz'));
-store.dispatch(createComment1('drugi komentarz'));
+store.dispatch(createComment('pierwszy komentarz'));
+store.dispatch(createComment('drugi komentarz'));
 
 serviceWorker.unregister();
